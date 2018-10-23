@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+      <!-- Import Font Awesome -->
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      <!-- Import jQuery -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="assets/css/icon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+    <title>2nd attempt Home page</title>
+    </head>
+
+
+
+    <body id="Home">
+
+	   	
+    	<div class="parallax-container">
+    		
+<!-- Navigation Bar -->
+	    	<div>
+	    		<br>
+	    		<nav class="navi">
+					<div class="nav-wrapper black-text">
+				      <a href="Home.html" class="logo "><img src="assets/imgs/logo.png"></a>
+				      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+				      <!-- Imabe for log size: 295px*85 -->
+				      <ul class="navbar-content right hide-on-med-and-down">
+				      	<li><a href="Home.html">Home</a></li>
+				        <li><a href="#">Team</a></li>
+				        <li><a href="#">Radio</a></li>
+				        <li><a href="#">Contact</a></li>
+				        <li><a href="#log_in" class="modal-trigger">Log in</a></li>
+				      </ul>
+				    </div>
+				</nav> 
+	    		<!-- Side Navbar -->
+	    		<ul class="sidenav" id="mobile-demo">
+
+	    			<br><br>
+	    			<li><a href="#Home">Home</a></li>
+			        <li><a href="#">Team</a></li>
+			        <li><a href="#">Radio</a></li>
+			        <li><a href="#">Contact</a></li>
+			        <li><a href="#log_in" class="modal-trigger">Log in</a></li>
+			    </ul>		
+			    <!-- Modal for signing in -->
+			    <div class="modal" id="log_in">
+			    	<h5 class="modal-close">&#10005;</h5>
+			    	<h3 class="login_title center-align">Log in</h3>
+			    	<div class="modal-content center">
+			    		<form action="#">
+			    			<div class="input-field">
+			    				<i class="material-icons prefix">person</i>
+			    				<input type="text" id="username">
+			    				<label for="username">Username</label>
+			    			</div>
+
+			    			<div class="input-field">
+			    				<i class="material-icons prefix">lock</i>
+			    				<input type="password" id="password">
+			    				<label for="password">Password</label>
+			    			</div>
+
+			    			 <div class="switch left">
+							    <label>							      
+							      <input type="checkbox">
+							      <span class="lever"></span>
+							      Keep me logged in
+							    </label>
+							  </div>
+							  <br>
+						    
+						    <br>
+			    			<input type="submit" value="Log In" class="login_button btn btn-large black-text">
+
+			    		</form>
+			    	</div>
+			    </div>
+	    	</div>
+    	
+	     
+<!-- Parallax -->    	
+     	<div class="parallax"><img src="assets/imgs/rsz_img0.png"></div>		
+ 		<div class="white-text  valign-wrapper">
+ 			<div class="row">	
+ 				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ 				<div class="col l6 m6">
+ 					<h3 class="message">Hello all,<br></h3>
+ 					<h6 class="content">We are a group of students who try thier best to evolve this awesome workspace more .</h6>
+ 				</div>     				
+ 			</div>     				
+ 		</div>
+   	 	</div>
+   	 	
+<!-- Search -->
+			
+   	 	<div class="search_section valign-wrapper">	 	 		
+	   	 	<div class="nav-wrapper container ">
+	   	 		<div>
+	   	 			<h4 class="title center-align">Search Events</h4>
+	   	 		</div>
+	   	 		<form>
+	   	 			<div class="input-field valign white">
+	   	 				<input type="search" id="search" placeholder="Search" required>
+	   	 				<br>
+	   	 				<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+	          			<i class="search_close material-icons">close</i>
+	   	 			</div>
+	   	 		</form>
+	   	 	</div>
+   	 	</div>
+   	 	
+   	 	
+
+<!-- Recent Events -->
+   	 	<div class="recents container">
+   	 		<h4 class="center-align">Recents</h4>
+   	 		<h6 class="center-align">The month was really busy</h6><br>
+   	 		
+   	 		<div class="row">
+   	 			<!-- Card 1 -->
+   	 			<div class="col l4 m6 s12">
+   	 			  <div class="card small hoverable">
+				    <div class="card-image waves-effect waves-block waves-light">
+				      <img class="activator" src="assets/imgs/openJam.jpg">
+				    </div>
+				    <div class="card-content">
+				      <span class="card-title activator grey-text text-darken-4">Open Jam<i class="material-icons right">more_vert</i></span>
+				      <p><a href="https://www.youtube.com/watch?v=a3LTQoi8lWs&list=PLpUKthsRl0Su6lg5TT850RNncetWtbMwU">A musical night</a></p>
+				    </div>
+				    <div class="card-reveal">
+				      <span class="card-title grey-text text-darken-4">Open Jam<i class="material-icons right">close</i></span>
+				      <p>A platformm created by CBS for all the artist to not only perform but also understand how much work goes in only covering an event with quality. Guess what its all done bu us(students), so join is and be the backbone of the events :)</p>
+				    </div>
+				  </div>
+				</div>
+
+				<!-- Card 2 -->
+				<div class="col l4 m6 s12">
+   	 			  <div class="card small hoverable">
+				    <div class="card-image waves-effect waves-block waves-light">
+				      <img class="activator" src="assets/imgs/img1.jpg">
+				    </div>
+				    <div class="card-content">
+				      <span class="card-title activator grey-text text-darken-4">101s<i class="material-icons right">more_vert</i></span>
+				      <p><a href="#">Let's learn</a></p>
+				    </div>
+				    <div class="card-reveal">
+				      <span class="card-title grey-text text-darken-4">101s<i class="material-icons right">close</i></span>
+				      <p>Its been years that parents are not quite sure how IIT GUWAHATI is, so here we bring you an insigt especially for all the freshers and let them know that thier new home awaits them eagerly.</p>
+				    </div>
+				  </div>
+				</div>
+
+				<!-- Card 3 -->
+				<div class="col l4 m6 s12">
+   	 			  <div class="card small hoverable">
+				    <div class="card-image waves-effect waves-block waves-light">
+				      <img class="activator" src="assets/imgs/img2.jpg">
+				    </div>
+				    <div class="card-content">
+				      <span class="card-title activator grey-text text-darken-4">Milestone<i class="material-icons right">more_vert</i></span>
+				      <p><a href="#">Achievement Unlocked</a></p>
+				    </div>
+				    <div class="card-reveal">
+				      <span class="card-title grey-text text-darken-4">Milestone<i class="material-icons right">close</i></span>
+				      <p>After a lot of hardwork and sleepless night we, Team CBS, have successfully Live streamed 360 degree VR. This is a great milestone as we are now trying to achieve the goals same as hotstar aims. Hope we give you some good news soon.</p>
+				    </div>
+				  </div>
+				</div>
+   	 		
+
+
+   	 			<!-- Card 4 -->
+   	 			<div class="col l4 m6 s12">
+   	 			  <div class="card small hoverable">
+				    <div class="card-image waves-effect waves-block waves-light">
+				      <img class="activator" src="assets/imgs/background.jpg">
+				    </div>
+				    <div class="card-content">
+				      <span class="card-title activator grey-text text-darken-4">Rewamp<i class="material-icons right">more_vert</i></span>
+				      <p><a href="#">A new begining</a></p>
+				    </div>
+				    <div class="card-reveal">
+				      <span class="card-title grey-text text-darken-4">Rewamp<i class="material-icons right">close</i></span>
+				      <p>With all new tech we are now here with an industrial standard radio. Get to learn not only the social skills of radio but own it and know its tech as well. All are warmly welcome.</p>
+				    </div>
+				  </div>
+				</div>
+
+				<!-- Card 5 -->
+				<div class="col l4 m6 s12">
+   	 			  <div class="card small hoverable">
+				    <div class="card-image waves-effect waves-block waves-light">
+				      <img class="activator" src="assets/imgs/idea.PNG">
+				    </div>
+				    <div class="card-content">
+				      <span class="card-title activator grey-text text-darken-4">Website ideation<i class="material-icons right">more_vert</i></span>
+				      <p><a href="#">At last!!</a></p>
+				    </div>
+				    <div class="card-reveal">
+				      <span class="card-title grey-text text-darken-4">Website ideation<i class="material-icons right">close</i></span>
+				      <p>It took a long time and multiple iterations to come up with the decent website. Please do give your valuable feedback and help us grow.</p>
+				    </div>
+				  </div>
+				</div>
+
+				<!-- Card 6 -->
+				<div class="col l4 m6 s12">
+   	 			  <div class="card small hoverable">
+				    <div class="card-image waves-effect waves-block waves-light">
+				      <img class="activator" src="assets/imgs/amplitude.png">
+				    </div>
+				    <div class="card-content">
+				      <span class="card-title activator grey-text text-darken-4">Showlist release<i class="material-icons right">more_vert</i></span>
+				      <p><a href="#">Let's begin</a></p>
+				    </div>
+				    <div class="card-reveal">
+				      <span class="card-title grey-text text-darken-4">Showlist release<i class="material-icons right">close</i></span>
+				      <p>This is the release of radio shows for the semester. You can also be an RJ. All you need to do is to have a plan of any kind of show and be ready with 20 episodes each, then register yourself so that we can manage you a slot!! Thats it! You are ready to refine your RJ skills now.</p>
+				    </div>
+				  </div>
+				</div>
+   	 		</div>
+
+   	 	</div>
+
+
+		<!-- Footer -->
+	<div class="footer_section">
+		<div class="container">
+			<h5 class="footer_title">FOLLOW US on</h5><span class="right">
+				<h6>Campus Broadcasting System</h6></span>			
+		</div>
+		<div class="container">
+			<a href="https://www.facebook.com/cbsiitg/" class="icn black-text"><i class="fab fa-facebook fa-3x"></i></a>
+			
+			<a href="https://www.youtube.com/channel/UC0kIPzh0rwpCjGwpBfMgjsw" class="black-text"><i class="fab fa-youtube fa-3x"></i></a>
+			<a href="https://instagram.com/cbs_iitg" class="fab fa-instagram fa-3x black-text"></i></a>
+		</div>
+	</div>
+
+
+    		<script>
+    	 	$(document).ready(function(){
+
+	          $(window).scroll(function(){
+	          	console.log("bla bla")
+	            if($(window).scrollTop()>300){
+	              $('nav').addClass('black');	              
+	            }else{ 
+	              $('nav').removeClass('black');
+	            }
+
+	          });
+
+         	});
+		</script>
+    	
+    	 <script src="assets/js/materializescript.min.js"></script>
+     	 <script type="text/javascript" src="assets/js/scripts.js"></script> 
+
+
+
+    </body>
+
+
+  </html>
+        

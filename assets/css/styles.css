@@ -1,0 +1,177 @@
+body{
+	background: url(assets/imgs/texture.jpg);
+	height: 1000px;
+}
+
+.logo{
+	font-size: 50px;
+	font-weight: 250;
+	padding-left: 40px;
+	padding-top: -10px;
+	text-shadow: 20;
+}
+
+.message{
+	text-shadow: 20px;
+	padding-left: 20px;
+}
+
+.parallax-container{
+	height: 600px;
+}
+
+/*Navbar*/
+
+		nav{
+			background: rgba(0,0,0,.2);
+			position: fixed;
+		}
+
+		nav li a:hover{
+			background: rgba(255,235,59,.4);
+		}
+
+		.container_search{
+			padding-top: 0px;
+		}
+
+		.navbar-content{
+			font-weight: 100;
+		}
+
+		.login_title{			
+			padding-top: 10px;
+		}
+
+		.login_button:value{
+			font-weight: 100;
+			font-size: 300px;
+		}
+
+		.check_box{
+			padding-left: 15px;
+		}
+
+		input[type="submit"]{
+			width: 100%;
+			background-color: rgba(255,235,59,.9);
+			border-radius: 5px;
+		}
+
+		input[type="submit"]:hover{
+			width: 100%;
+			background-color: rgba(255,235,59,.6);
+		}
+
+		
+		input[type="checkbox"]:checked{
+			color: rgba(255,235,59,.9);
+		}
+		 .input-field.prefix.active{
+		 	color: rgba(255,235,59,.9);
+		 }
+
+		 .modal-close{
+		 	position: absolute;
+		 	top: 0px;
+		 	right: 20px;
+		 }
+
+		.red:checked + label:before {
+		  /*top: -4px;
+		  left: -3px;
+		  width: 12px;
+		  height: 22px;
+		  border-top: 2px solid transparent;
+		  border-left: 2px solid transparent;*/
+		  border-right: 2px solid yellow; /* You need to change the colour here */
+		  border-bottom: 2px solid yellow; /* And here */
+		  /*-webkit-transform: rotate(40deg);
+		  -moz-transform: rotate(40deg);
+		  -ms-transform: rotate(40deg);
+		  -o-transform: rotate(40deg);
+		  transform: rotate(40deg);
+		  -webkit-backface-visibility: hidden;
+		  -webkit-transform-origin: 100% 100%;
+		  -moz-transform-origin: 100% 100%;
+		  -ms-transform-origin: 100% 100%;
+		  -o-transform-origin: 100% 100%;
+		  transform-origin: 100% 100%; */
+		}
+
+
+/*Search*/
+
+		.search{
+			height: 100px;
+		}
+
+		.search_section{
+			height: 150px;
+			background: rgba(255,235,59,.9);
+		}
+
+		.label-icon{
+			padding-left: 30px;
+		}
+
+		.title{
+			text-align: center;
+		}
+
+		.input-field{
+			height: 50px;
+		}
+
+		.search_close{
+			padding-top: 10px;
+		}
+
+.content{
+	font-weight: 100;
+	background-color: rgba(225,225,225,.2);
+	padding: 15px;
+	padding-top: 10px;
+	border-radius: 10px;
+}
+
+/*Recents*/
+
+		.card-title{
+			font-weight: 100;
+		}
+
+		/*.card{
+			width: 50px;
+		}*/
+
+
+/*Footer*/
+	
+		.footer_section{
+			height: 170px;
+			background: rgba(255,235,59,.9);
+		}
+
+		.footer_title{
+			font-weight: 500px;
+			/*text-align: left;*/
+			padding: 20px;
+		}
+
+		.icn{
+			margin: 2px 5px;
+			padding-left: 15px;
+		}
+
+
+		/*.card{
+			width: 100px;
+		}*/
+
+
+
+.test1{
+	background-color: blue;
+	height: 85px;
+}
