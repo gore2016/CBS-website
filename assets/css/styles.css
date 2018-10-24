@@ -1,5 +1,5 @@
 body{
-	background: url(assets/imgs/texture.jpg);
+	
 	height: 1000px;
 }
 
@@ -182,6 +182,12 @@ body{
 
 .tags{
 	font-size: 10px;
+}
+
+/*team pagr*/
+
+.carousel{
+	height: 600px;
 }
 
 .test1{
