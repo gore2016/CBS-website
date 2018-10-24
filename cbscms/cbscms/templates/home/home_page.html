@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static wagtailuserbar %}
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+<!-- parallax -->
+		<div class="parallax-container">
+		    <div class="parallax"><img src="{% static 'imgs/rsz_img0.png' %}"></div>
+		        <div class="white-text  valign-wrapper">
+		        <div class="row">   
+		        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		        <div class="col l6 m6">
+		            <h3 class="message">Hello all,<br></h3>
+		            <h6 class="content">We are a group of students who try thier best to evolve this awesome workspace more .</h6>
+		        </div>                  
+		        </div>                  
+		    </div>
+		</div>
+
+<!-- search bar -->
+            <div class="search_section valign-wrapper">             
+                <div class="nav-wrapper container ">
+                    <div>
+                        <h4 class="title center-align">Search Events</h4>
+                    </div>
+                    <form>
+                        <div class="input-field valign white">
+                            <input type="search" id="search" placeholder="Search" required>
+                            <br>
+                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                            <i class="search_close material-icons">close</i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+<!-- Recent Events -->
+            <div class="recents container">
+                <h4 class="center-align">Recents</h4>
+                <h6 class="center-align">The month was really busy</h6><br>
+                
+                <div class="row">
+{% for entry in recent_events_list %}
+                    <div class="col l4 m6 s12">
+                      <div class="card small hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="../media/{{entry.event_image}}">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">{{entry.event_title}}<i class="material-icons right">more_vert</i></span>
+                          <p><a href="{{entry.event_href_link}}">{{entry.event_href_text}}</a></p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">{{entry.event_title}}<i class="material-icons right">close</i></span>
+                          <p>{{entry.event_description}}</p>
+                        </div>
+                      </div>
+                    </div>
+{% endfor %}
+                </div>
+            </div>            
+{% endblock %}

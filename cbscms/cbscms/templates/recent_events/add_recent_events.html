@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static wagtailuserbar %}
+{% load static %}
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+<!-- Recent Events -->
+    	<div class="col l4 m6 s12">
+          <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="../media/{{page.event_image}}">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">{{page.event_title}}<i class="material-icons right">more_vert</i></span>
+              <p><a href="{{page.event_href_link}}">{{page.event_href_text}}</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">{{page.event_title}}<i class="material-icons right">close</i></span>
+              <p>{{page.event_description}}</p>
+            </div>
+          </div>
+        </div>
+{% endblock %}

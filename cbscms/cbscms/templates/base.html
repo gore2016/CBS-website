@@ -1,0 +1,118 @@
+{% load static wagtailuserbar %}
+
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %}- {{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock %}
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {# Global stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/cbscms.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/icon.css' %}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+        {% wagtailuserbar %}
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/cbscms.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/init.js' %}"></script>
+
+        {% block extra_js %}
+            {# Override this in templates to add extra javascript #}
+        {% endblock %}
+
+           <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper black">
+                <a href="index.html" class="logo "><img src="{% static 'imgs/logo.png' %}"></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <!-- Imabe for log size: 295px*85 -->
+                <ul class="navbar-content right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Radio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#log_in" class="modal-trigger">Log in</a></li>
+                </ul>
+                </div>
+            </nav>
+            </div>
+
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Radio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#log_in" class="modal-trigger">Log in</a></li>
+            </ul>
+
+            <div class="modal" id="log_in">
+                <h5 class="modal-close">&#10005;</h5>
+                <h3 class="login_title center-align">Log in</h3>
+                <div class="modal-content center">
+                <form action="#">
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <input type="text" id="username">
+                        <label for="username">Username</label>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock</i>
+                        <input type="password" id="password">
+                        <label for="password">Password</label>
+                    </div>
+
+                    <div class="switch left">
+                    <label>                               
+                        <input type="checkbox">
+                        <span class="lever"></span>
+                        Keep me logged in
+                    </label>
+                    </div>
+                    <br>
+                    <br>
+                    <input type="submit" value="Log In" class="login_button btn btn-large black-text">
+                </form>
+                </div>
+            </div>
+
+        {% block content %}{% endblock %}
+
+    </body>
+
+<footer>
+    <div class="footer_section">
+        <div class="container">
+            <h5 class="footer_title">FOLLOW US on</h5><span class="right">
+                <h6>Campus Broadcasting System</h6></span>
+        </div>
+        <div class="container">
+            <a href="https://www.facebook.com/cbsiitg/" class="icn black-text"><i class="fab fa-facebook fa-3x"></i></a> 
+            <a href="https://www.youtube.com/channel/UC0kIPzh0rwpCjGwpBfMgjsw" class="black-text"><i class="fab fa-youtube fa-3x"></i></a>
+            <a href="https://instagram.com/cbs_iitg" class="fab fa-instagram fa-3x black-text"></i></a>
+        </div>
+    </div>   
+</footer>
+</html>

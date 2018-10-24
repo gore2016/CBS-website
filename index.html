@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <html>
         <head>
-            <title>Campus Broadcasting System - CBS IIT Guwahati</title>
+            <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}{% block title_postfix %} | CBS IITG{% endblock %}</title>
             
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>           
             <link rel="stylesheet" href="assets/css/materialize.min.css">
@@ -28,7 +28,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">Team</a></li>
                     <li><a href="#">Radio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="#log_in" class="modal-trigger">Log in</a></li>
                 </ul>
                 </div>
@@ -39,7 +39,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Team</a></li>
                 <li><a href="#">Radio</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="#log_in" class="modal-trigger">Log in</a></li>
             </ul>
 
