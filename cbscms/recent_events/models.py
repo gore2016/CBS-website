@@ -3,6 +3,7 @@ from django.db import models
 # from wagtail.wagtailsearch import index
 from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel
+from wagtail.admin.edit_handlers import MultiFieldPanel
 from wagtail.core.models import Page
 
 
@@ -28,10 +29,16 @@ class AddRecentEvents(Page):
     # ]
 
     content_panels = Page.content_panels + [
+	MultiFieldPanel(
+		[
+			FieldPanel('event_title'),
+			FieldPanel('event_image', classname="full"),
+			FieldPanel('event_description'),
+			FieldPanel('event_href_text'),
+			FieldPanel('event_href_link'),
+		],
+		heading="Introduction Panel",
+		classname="collapsible collapsed",
+	),
         FieldPanel('event_date'),
-        FieldPanel('event_title'),
-        FieldPanel('event_description'),
-        FieldPanel('event_href_text'),
-        FieldPanel('event_href_link'),
-        FieldPanel('event_image', classname="full"),
     ]
