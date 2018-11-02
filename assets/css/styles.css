@@ -250,6 +250,18 @@ body{
 }
 
 
+/*favourite button*/
+.fas {
+    cursor: pointer;
+}
+
+.fav_icon{
+	float: right;
+}
+
+.fav_icon.playing{
+	float: left;
+}
 
 
 .test1{

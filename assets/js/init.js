@@ -5,3 +5,10 @@ $(document).ready(function(){
   	$('.carousel.carousel-slider').carousel({
     fullWidth: true});
   });
+
+// favourite button
+
+
+function myFunction(x) {
+    x.classList.toggle("red-text");
+}
