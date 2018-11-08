@@ -10,5 +10,5 @@ $(document).ready(function(){
 
 
 function myFunction(x) {
-    x.classList.toggle("red-text");
+    x.classList.toggle("yellow-text");
 }

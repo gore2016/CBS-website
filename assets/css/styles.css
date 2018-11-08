@@ -259,8 +259,24 @@ body{
 	float: right;
 }
 
+.fav_icon.play{
+	padding-bottom: 10px;
+	float: right;
+}
+
 .fav_icon.playing{
 	float: left;
+}
+
+.shows{
+	border-width: 20px;
+	border-color: black;
+}
+
+.episode{
+	font-weight: 400;
+	font-size: 20px;
+	height: 100px;
 }
 
 
