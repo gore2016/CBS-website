@@ -99,9 +99,9 @@ DATABASES = {
     'users': {
 	'ENGINE': 'django.db.backends.mysql',
 	'NAME': 'radiodj2',
-	'USER': 'root',
-	'PASSWORD': 'joel',
-	'HOST': '172.16.101.102'
+	'USER': 'Enter username here',
+	'PASSWORD': 'Enter password here',
+	'HOST': 'Enter host here'
     }
 }
 
