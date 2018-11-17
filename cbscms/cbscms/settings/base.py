@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'home',
     'search',
     'recent_events',
+    'radio',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -94,6 +95,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'users': {
+	'ENGINE': 'django.db.backends.mysql',
+	'NAME': 'radiodj2',
+	'USER': 'root',
+	'PASSWORD': 'joel',
+	'HOST': '172.16.101.102'
     }
 }
 

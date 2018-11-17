@@ -1,0 +1,10 @@
+{% for results in upcoming %}
+      <li class="collection-item avatar">
+        <i class="material-icons circle yellow">play_arrow</i>
+        <span class="artist">{{results.artist}}</span>
+        <span class="fav_icon"><i onclick="myFunction(this)" class="fas fa-heart"></i></span>
+        <p class="song">{{results.title}}</p>
+      </li>
+
+{% endfor %}
+

@@ -1,0 +1,379 @@
+{% extends "base.html" %}
+{% load static wagtailuserbar %}
+
+{% block extra_js %}
+<script>
+    $(document).ready(function () {
+    setInterval(function() {
+        $.ajax({
+            type: "GET",
+            url: {% url 'upcoming_refresh' %},  // URL to your view that serves new info
+        })
+        .done(function(response) {
+	    setTimeout(function () {
+               $("#upcoming").html(response);
+	    }, 30000);
+	    //document.title =  response;
+            
+        });
+        $.ajax({
+            type: "GET",
+            url: {% url 'playing_refresh' %},  // URL to your view that serves new info
+        })
+        .done(function(response) {
+	    setTimeout(function () {
+                $("#playing").html(response);
+	    }, 30000);
+            //document.title =  response;
+
+        });
+        
+    }, 5000);
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+
+        <style scoped>
+            /* 0 to 299 */
+            .buttonbeh {
+                display: normal;
+            }
+            /* 300 to X */
+            @media (min-width: 800px) { /* or 301 if you want really the same as previously.  */
+                .buttonbeh {
+                    display: normal;
+                }
+        #livenow {
+            display:none;
+        }
+            }
+        </style>
+
+<!--
+
+ <div class="fixed-action-btn">
+    <a href="#" data-target="chat" class="shows btn-floating btn-large yellow z-depth-3 hoverable sidenav-trigger">
+      <i class="fas fa-archive black-text"></i>
+    </a>
+  </div>
+
+  <div id="chat" class="sidenav chatbox grey lighten-3">
+    <br><br>
+    <div class="logo_sidenav_div center black valign-wrapper"><img class="valign logo_sidenav" src="assets/imgs/logo.png">
+    </div>
+    <br><br>
+
+    <ul  class="">
+      <li>
+        <a class="chat_list bold collapsible-header waves-effect waves-yellow">All shows</a>
+        <div class="collapsible-body">
+          <>
+        </div>
+      </li>
+      <li>
+        <a class="chat_list bold collapsible-header waves-effect waves-yellow modal-trigger" href="#modal1">Show 1</a>
+        <div class="collapsible-body">
+          <>
+        </div>
+      </li>
+      <li>
+        <a class="chat_list bold collapsible-header waves-effect waves-yellow">Show 2</a>
+        <div class="collapsible-body">
+          <>
+        </div>
+      </li>
+      <li>
+        <a class="chat_list bold collapsible-header waves-effect waves-yellow">Show 3</a>
+        <div class="collapsible-body">
+          <>
+        </div>
+      </li>
+      <li>
+        <a class="chat_list bold collapsible-header waves-effect waves-yellow">Show 4</a>
+        <div class="collapsible-body">
+          <>
+        </div>
+      </li>
+      <li>
+        <a class="chat_list bold collapsible-header waves-effect waves-yellow">Show 5</a>
+        <div class="collapsible-body">
+          <>
+        </div>
+      </li>
+      <li>
+        <a class="chat_list bold collapsible-header waves-effect waves-yellow">Radio</a>
+        <div class="collapsible-body">
+          <>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Show 1</h4>
+      <h5>RJ Manisha Shrivastava</h5>
+      <p>About the show</p>
+      <ul class="episode">
+        <li>
+          <span>Episode 1</span>
+          <span class="fav_icon"><i onclick="myFunction(this)" class="fas fa-play-circle fa-2x"></i></span>
+        </li>
+        <li>
+          <span>Episode 2</span>
+          <span class="fav_icon"><i onclick="myFunction(this)" class="fas fa-play-circle fa-2x"></i></span>
+        </li>
+        <li>
+          <span>Episode 3</span>
+          <span class="fav_icon"><i onclick="myFunction(this)" class="fas fa-play-circle fa-2x"></i></span>
+        </li>
+        <li>
+          <span>Episode 4</span>
+          <span class="fav_icon"><i onclick="myFunction(this)" class="fas fa-play-circle fa-2x"></i></span>
+        </li>
+        <li>
+          <span>Episode 5</span>
+          <span class="fav_icon"><i onclick="myFunction(this)" class="fas fa-play-circle fa-2x"></i></span>
+        </li>
+      </ul>
+    </div>
+</div>
+ -->
+
+<!-- parallax -->
+<div class="parallax-container radio_gif">
+    <div class="parallax"><img src="../media/{{page.parallax_image}}"></div>
+        <div class="white-text">
+        <div class="row container right-align">   
+        <br><br>
+             <link rel="stylesheet" type="text/css" href="{% static 'css/video-js.css' %}" rel="stylesheet">
+
+             <script type="text/javascript" src="{% static 'js/video.js' %}"></script>
+                    <script>
+                          _V_.ControlBar.prototype.options.components = {'playToggle':{}}
+                    </script>
+             <script type="text/javascript" src="{% static 'js/videojs-contrib-hls.js' %}"></script>
+             <script type="text/javascript" src="{% static 'js/videojs-contrib-hls.min.js' %}"></script>
+     
+        <script>
+               var player = videojs('myPlayer');
+               player.play()
+        </script>
+        <div class="col s6 offset-s6">
+            <h3>Now playing<br></h3>
+	<!--player -->
+             <div style="width: 100%" align="center">
+                    <audio id="myPlayer" width=420 height=20 class="video-js" controls data-setup='{}'>
+                          <source src="http://cbs.iitg.ernet.in/radio/1080.m3u8" type="application/x-mpegURL" label='auto'>
+                    </audio>
+             </div>
+	<!--player ends-->
+            <h6 id="playing" class="content"><span class="fav_icon fa-2x playing"><i onclick="myFunction(this)" class="fas fa-heart"></i></span>{{now_playing.0}}<br>{{now_playing.1}}</h6>
+         </div>
+	 </div>                  
+        </div>                  
+    </div>
+</div>
+
+
+<br><br>
+<!-- upcoming -->
+<div class="container">
+  <div class="request">
+  <h4>Upcoming</h4>
+  <br>
+    <ul id="upcoming" class="collection">
+
+{% for results in upcoming %}
+      <li class="collection-item avatar">
+        <i class="material-icons circle yellow">play_arrow</i>
+        <span class="artist">{{results.artist}}</span>
+        <span class="fav_icon"><i onclick="myFunction(this)" class="fas fa-heart"></i></span>
+        <p class="song">{{results.title}}</p>
+      </li>
+
+{% endfor %} 
+
+      <!-- 1 -->
+   <!--   <li class="collection-item avatar">
+        <i class="material-icons circle yellow">play_arrow</i>
+        <span class="artist">Greenday</span>
+        <span class="fav_icon"><i onclick="myFunction(this)" class="fas fa-heart"></i></span>
+        <p class="song">Demons</p>
+      </li>
+
+      
+      <li class="collection-item avatar">
+        <img src="assets/imgs/openJam.jpg" alt="" class="circle">
+        <span class="artist">Title</span>
+        <span class="fav_icon"><i onclick="myFunction(this)" class="fas fa-heart"></i></span>
+        <p class="song">First Line
+        </p>
+      </li>
+      
+      <li class="collection-item avatar">
+        <img src="assets/imgs/logo.png" alt="" class="circle">
+        <span class="artist">Title</span>
+        <span class="fav_icon"><i onclick="myFunction(this)" class="fas fa-heart"></i></span>
+        <p class="song">First Line
+        </p>
+      </li> -->
+    </ul> 
+
+
+  </div>
+</div>
+
+<br><br>
+
+<!--
+
+
+<div class="recents container">
+                <h4 class="center-align">Radio Shows</h4>
+                <h6 class="center-align">around the week</h6><br>
+                
+                <div class="row">
+                    
+                    <div class="col l4 m6 s12">
+                      <div class="card small hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="assets/imgs/openJam.jpg">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Pa se poetry<i class="material-icons right">more_vert</i></span>
+                          <p>Monday</p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Pa se poetry<i class="material-icons right">close</i></span>
+                          <p>Pa se poetry is a radio show in which people from poets corner talk about a famous Hindi poet or a shayar with some of their poems.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                   
+                    <div class="col l4 m6 s12">
+                      <div class="card small hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="assets/imgs/img1.jpg">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Show 2<i class="material-icons right">more_vert</i></span>
+                          <p>Tuesday</p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">101s<i class="material-icons right">close</i></span>
+                          <p>Its been years that parents are not quite sure how IIT GUWAHATI is, so here we bring you an insigt especially for all the freshers and let them know that thier new home awaits them eagerly.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                   
+                    <div class="col l4 m6 s12">
+                      <div class="card small hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="assets/imgs/img2.jpg">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Show 3<i class="material-icons right">more_vert</i></span>
+                          <p>Wednesday</p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Milestone<i class="material-icons right">close</i></span>
+                          <p>After a lot of hardwork and sleepless night we, Team CBS, have successfully Live streamed 360 degree VR. This is a great milestone as we are now trying to achieve the goals same as hotstar aims. Hope we give you some good news soon.</p>
+                        </div>
+                      </div>
+                    </div>
+                
+
+
+                   
+                    <div class="col l4 m6 s12">
+                      <div class="card small hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="assets/imgs/background.jpg">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Show 4<i class="material-icons right">more_vert</i></span>
+                          <p>Thursday</p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Rewamp<i class="material-icons right">close</i></span>
+                          <p>With all new tech we are now here with an industrial standard radio. Get to learn not only the social skills of radio but own it and know its tech as well. All are warmly welcome.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                   
+                    <div class="col l4 m6 s12">
+                      <div class="card small hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="assets/imgs/idea.PNG">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Show 5<i class="material-icons right">more_vert</i></span>
+                          <p>Friday</p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Website ideation<i class="material-icons right">close</i></span>
+                          <p>It took a long time and multiple iterations to come up with the decent website. Please do give your valuable feedback and help us grow.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col l4 m6 s12">
+                      <div class="card small hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="assets/imgs/amplitude.png">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Show 6<i class="material-icons right">more_vert</i></span>
+                          <p>Saturday</p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Showlist release<i class="material-icons right">close</i></span>
+                          <p>This is the release of radio shows for the semester. You can also be an RJ. All you need to do is to have a plan of any kind of show and be ready with 20 episodes each, then register yourself so that we can manage you a slot!! Thats it! You are ready to refine your RJ skills now.</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+<br><br>
+
+<div class="container">
+  <div class="searchbox">
+  <h4>Song requests</h4>
+
+    <form>
+      <div class="input-field">
+        <input id="search" type="search" required>
+        <label for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons">close</i>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+
+<br>
+-->
+
+<div class="container">
+  <div class="thoughts">
+  <h4>Share your thought with the us</h4>
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Textarea</label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

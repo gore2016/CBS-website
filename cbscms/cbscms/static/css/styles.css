@@ -1,5 +1,5 @@
 body{
-	background: url(assets/imgs/texture.jpg);
+	
 	height: 1000px;
 }
 
@@ -183,6 +183,103 @@ body{
 .tags{
 	font-size: 10px;
 }
+
+/*team page*/
+
+.carousel{
+	height: 600px;
+}
+
+/*radio page*/
+
+.chatbox{
+	left:auto;
+}
+
+.chat_list{
+	padding-left: 10px;
+}
+
+.logo_sidenav_div{
+	height: 80px;
+}
+
+.logo_sidenav{
+	padding-left: 60px;
+}
+
+.radio_gif{
+	height: 250px;
+}
+
+.request{
+	height: 400px;
+    padding                 :   10px 20px;
+    border-style                :   solid;
+    border-width                :   2px;
+    border-color                :   black;
+    border-radius               :   13px;
+    overflow: scroll;
+}
+
+
+.searchbox{
+	height: 180px;
+    padding                 :   10px 20px;
+    border-style                :   solid;
+    border-width                :   2px;
+    border-color                :   black;
+    border-radius               :   13px;
+}
+
+.thoughts{
+    padding                 :   10px 20px;
+    border-style                :   solid;
+    border-width                :   2px;
+    border-color                :   black;
+    border-radius               :   13px;
+}
+
+.artist{
+	font-weight: 500;
+	font-size: 12px;
+}
+
+.song{
+	font-weight: 500;
+	font-size: 20px;
+}
+
+
+/*favourite button*/
+.fas {
+    cursor: pointer;
+}
+
+.fav_icon{
+	float: right;
+}
+
+.fav_icon.play{
+	padding-bottom: 10px;
+	float: right;
+}
+
+.fav_icon.playing{
+	float: left;
+}
+
+.shows{
+	border-width: 20px;
+	border-color: black;
+}
+
+.episode{
+	font-weight: 400;
+	font-size: 20px;
+	height: 100px;
+}
+
 
 .test1{
 	background-color: blue;

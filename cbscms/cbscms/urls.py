@@ -7,6 +7,8 @@ from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from search import views as search_views
+from radio import views as radio_views
+from home import views as home_views
 
 urlpatterns = [
     url(r'^django-admin/', admin.site.urls),
@@ -15,6 +17,10 @@ urlpatterns = [
     url(r'^documents/', include(wagtaildocs_urls)),
 
     url(r'^search/$', search_views.search, name='search'),
+    url(r'^upcoming_refresh/', radio_views.upcoming_refresh, name='upcoming_refresh'),
+    url(r'^playing_refresh/', radio_views.playing_refresh, name='playing_refresh'),
+
+    url(r'^contact/', home_views.contact, name='contact'),
 
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's page serving mechanism. This should be the last pattern in
